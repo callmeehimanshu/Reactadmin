@@ -22,9 +22,9 @@ export default function TemporaryDrawer({ state, setState, toggleDrawer }) {
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <List>
-        {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
+        {['Face Reconigition', 'DailyVisit', 'Donate', 'workOrders'].map((text, index) => (
           <ListItem key={text} disablePadding>
-            <ListItemButton>
+            <ListItemButton href={`/${text.toLowerCase()}`}>
               <ListItemIcon>
                 {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
               </ListItemIcon>
@@ -35,9 +35,9 @@ export default function TemporaryDrawer({ state, setState, toggleDrawer }) {
       </List>
       <Divider />
       <List>
-        {['All mail', 'Trash', 'Spam'].map((text, index) => (
+        {['reports', 'Report History', 'Test History','calenderType'].map((text, index) => (
           <ListItem key={text} disablePadding>
-            <ListItemButton>
+            <ListItemButton href={`/${text.toLowerCase()}`}>
               <ListItemIcon>
                 {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
               </ListItemIcon>
