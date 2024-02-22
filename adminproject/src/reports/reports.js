@@ -1,7 +1,6 @@
 import React from 'react'
 import { useState } from 'react'
-import rows from "../MockData"
-const Reports = () => {
+const Reports = ({setData1}) => {
   const [store1,setstore]=useState([]);
   const [data,setData]=useState({
     DONOR:"",
@@ -19,28 +18,39 @@ const Reports = () => {
     ...data,
     [name]: value,
   });
-  console.log("store-----",store1)
   
  }
  const handleSubmit = (e) => {
   e.preventDefault();
   setstore([...store1, data]);
-  // setData({ name: "", email: "" });
-  // console.log(store);
+  setData1(store1)
  
 };
   return (
-    <div>
-     <div>
+    <div style={{ width:"100vw"}}>
+      <h1>Enter the you want to display on BasicTable</h1>
+     <div style={{display:"flex", width:"100%"}} >
      <form>
-        <input type="text" value={data.DONOR} name="DONOR" onChange={handleChange}></input>
-        <input type="text" value={data.PANNEL} name="PANNEL" onChange={handleChange}></input>
-        <input type="text" value={data.BARCODE} name="BARCODE" onChange={handleChange}></input>
-        <input type="text" value={data.SOURCE} name="SOURCE" onChange={handleChange}></input>
-        <input type="text" value={data.DATA} name="DATA" onChange={handleChange}></input>
-        <input type="text" value={data.AMOUNT} name="AMOUNT" onChange={handleChange}></input>
-        <input type="text" value={data.OBSERVEDBY}name="OBSERVEDBY" onChange={handleChange}></input>
-        <input type="text" value={data.STATUS} name="STATUS" onChange={handleChange}></input>
+      <tr style={{display:"flex", flexDirection:"column"}}>
+      <div style={{display:"flex",width:"500px",justifyContent:"space-between", margin:"15px",padding:"15px"}}> 
+        <td> <input type="text" value={data.DONOR} name="DONOR" placeholder="DONOR..." onChange={handleChange}></input></td>
+       <td><input type="text" value={data.PANNEL} name="PANNEL"placeholder="PANNEL..." onChange={handleChange}></input></td> 
+        </div>
+       
+        <div style={{display:"flex",width:"500px",justifyContent:"space-between", margin:"15px",padding:"15px"}}> 
+        <td> <input type="text" value={data.BARCODE} name="BARCODE" onChange={handleChange}></input></td>
+       <td> <input type="text" value={data.SOURCE} name="SOURCE" onChange={handleChange}></input></td>
+       </div> 
+       
+      <div style={{display:"flex",width:"500px",justifyContent:"space-between", margin:"15px",padding:"15px"}}> 
+        <td> <input type="text" value={data.DATA} name="DATA" onChange={handleChange}></input></td>
+       <td> <input type="text" value={data.AMOUNT} name="AMOUNT" onChange={handleChange}></input></td>
+       </div>
+       <div style={{display:"flex",width:"500px",justifyContent:"space-between", margin:"15px",padding:"15px"}}> 
+       <td>  <input type="text" value={data.OBSERVEDBY}name="OBSERVEDBY" onChange={handleChange}></input></td>
+       <td> <input type="text" value={data.STATUS} name="STATUS" onChange={handleChange}></input></td>
+       </div>
+        </tr>
       </form>
      </div>
      <div>

@@ -24,7 +24,7 @@ export default function ButtonAppBar() {
     setState({ ...state, [anchor]: open });
   };
   return (
-    <Box sx={{ flexGrow: 1 }}>
+    <Box style={{marginTop:"50px"}} sx={{ flexGrow: 1 }}>
       <AppBar position="static">
         <Toolbar>
           <IconButton

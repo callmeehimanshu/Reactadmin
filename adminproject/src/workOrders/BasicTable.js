@@ -10,11 +10,10 @@ import { useState } from 'react';
 import rows from "../MockData"
 
 
-export default function BasicTable() {
-    
-    const [data,setdata]=useState(rows);
-    
-
+export default function BasicTable({data1}) {
+ 
+    const [data,setdata]=useState([...rows,...data1]);
+   
     const handledelete=(index)=>{
         let data2=data.filter((i,ind)=>{
             return index!==ind;

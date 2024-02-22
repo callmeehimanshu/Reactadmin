@@ -1,7 +1,6 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
-import Button from '@mui/material/Button';
 import List from '@mui/material/List';
 import Divider from '@mui/material/Divider';
 import ListItem from '@mui/material/ListItem';
@@ -22,18 +21,18 @@ export default function TemporaryDrawer({ state, setState, toggleDrawer }) {
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <List>
-        {['Face Reconigition', 'DailyVisit', 'Donate', 'workOrders'].map((text, index) => (
-          <ListItem key={text} disablePadding>
-            <ListItemButton href={`/${text.toLowerCase()}`}>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItemButton>
-          </ListItem>
-        ))}
-      </List>
-      {/* href={`/${text.toLowerCase()}`}    <Link to="/">Home</Link> */}
+  {['Face Reconigition', 'DailyVisit', 'Donate', 'workOrders'].map((text, index) => (
+    <ListItem key={text} disablePadding>
+      <ListItemButton component={Link} to={`/${text.toLowerCase()}`}>
+        <ListItemIcon>
+          {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+        </ListItemIcon>
+        <ListItemText primary={text} />
+      </ListItemButton>
+    </ListItem>
+  ))}
+</List>
+      {/* href={/${text.toLowerCase()}}    <Link to="/">Home</Link> */}
       <Divider />
       <List>
         {['reports', 'Report History', 'Test History','calenderType'].map((text, index) => (

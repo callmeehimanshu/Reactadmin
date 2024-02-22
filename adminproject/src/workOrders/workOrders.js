@@ -1,9 +1,9 @@
 import React from 'react'
 import BasicTable from './BasicTable'
-const WorkOrders = () => {
+const WorkOrders = ({data1}) => {
   return (
     <div>
-      <BasicTable />
+      <BasicTable data1={data1} />
     </div>
   )
 }
