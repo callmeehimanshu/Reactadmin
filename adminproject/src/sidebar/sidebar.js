@@ -10,7 +10,7 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
-
+import { Link } from "react-router-dom";
 export default function TemporaryDrawer({ state, setState, toggleDrawer }) {
 
 
@@ -33,11 +33,12 @@ export default function TemporaryDrawer({ state, setState, toggleDrawer }) {
           </ListItem>
         ))}
       </List>
+      {/* href={`/${text.toLowerCase()}`}    <Link to="/">Home</Link> */}
       <Divider />
       <List>
         {['reports', 'Report History', 'Test History','calenderType'].map((text, index) => (
           <ListItem key={text} disablePadding>
-            <ListItemButton href={`/${text.toLowerCase()}`}>
+            < ListItemButton href={`/${text.toLowerCase()}`}>
               <ListItemIcon>
                 {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
               </ListItemIcon>

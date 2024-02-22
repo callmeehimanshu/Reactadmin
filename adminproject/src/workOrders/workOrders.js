@@ -1,8 +1,10 @@
 import React from 'react'
-
+import BasicTable from './BasicTable'
 const WorkOrders = () => {
   return (
-    <div>workOrders</div>
+    <div>
+      <BasicTable />
+    </div>
   )
 }
 
