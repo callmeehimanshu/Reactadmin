@@ -1,3 +1,4 @@
+import { color, fontSize } from '@mui/system';
 import React from 'react'
 import { useState } from 'react'
 const Reports = ({setData1}) => {
@@ -54,7 +55,7 @@ const Reports = ({setData1}) => {
       </form>
      </div>
      <div>
-      <button type="submit" onClick={(e) => handleSubmit(e)}> Submit</button>
+      <button  style={{ marginLeft:"280px", color:"blue"}} type="submit" onClick={(e) => handleSubmit(e)}> Submit</button>
      </div>
     </div>
   )
